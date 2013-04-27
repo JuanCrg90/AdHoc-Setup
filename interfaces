@@ -1,0 +1,13 @@
+# start interfaces upon start of the system
+auto lo wlan0
+ 
+# register loopback interface
+iface lo inet loopback
+ 
+# use dhcp and allow interface to be started when kernel detects a hotplug event
+allow-hotplug eth0
+iface eth0 inet dhcp
+ 
+# use manual ip configuration for wlan0 interface and allow hotplug as well
+allow-hotplug wlan0
+iface wlan0 inet manual
